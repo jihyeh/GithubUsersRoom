@@ -17,4 +17,13 @@ class UserEntity(
     val html_url: String,
     @ColumnInfo(name = "score")
     val score: Float
-)
+) {
+    fun toUi(): UserUi {
+        return UserUi(
+            login = this.login,
+            id = this.id,
+            html_url = this.html_url,
+            score = this.score
+        )
+    }
+}
